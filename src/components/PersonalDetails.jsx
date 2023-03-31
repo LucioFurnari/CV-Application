@@ -7,6 +7,8 @@ export default function PersonalDetails() {
     profession: '',
     number: '',
     email: '',
+    linkedin: '',
+    github:'',
     direction: '',
   })
   const [valid, setValid] = useState(false);
@@ -23,10 +25,17 @@ export default function PersonalDetails() {
   }
   return (
     <>
-      {valid ? <p>{input.name} </p> : <input name="name" onChange={handleInput} value={input.name}></input> }
-      {valid ? <p>{input.profession} </p> : <input name="profession" onChange={handleInput} value={input.profession}></input>}
-      {valid ? <p>{input.number}</p> : <input name="number" onChange={handleInput} value={input.number}></input>}
-      <button onClick={handleValid}>Edit</button>
+    <div className="name-section">
+      {valid ? <h1>{input.name} </h1> : <input name="name" onChange={handleInput} value={input.name} placeholder="Name"></input> }
+      {valid ? <h2>{input.profession} </h2> : <input name="profession" onChange={handleInput} value={input.profession} placeholder="Profession"></input>}
+    </div>
+    <div className="contact-section">
+      {valid ? <p> {input.number} | </p> : <input name="number" onChange={handleInput} value={input.number} placeholder="Number"></input>}
+      {valid ? <span><a href={input.email}>{input.email} </a> |</span>  : <input name="email" onChange={handleInput} value={input.email} placeholder="Email"></input>}
+      {valid ? <span><a href={input.github}> Github </a> | </span>: <input name="github" onChange={handleInput} value={input.github} placeholder="Github"></input>}
+      {valid ? <a href={'https://github.com/'+input.linkedin}> Linkedin </a> : <input name="linkedin" onChange={handleInput} value={input.linkedin} placeholder="Linkedin profile"></input>}
+    </div>
+    <button onClick={handleValid}>{valid ? 'Edit' : 'Save'}</button>
     </>
   )
 }
