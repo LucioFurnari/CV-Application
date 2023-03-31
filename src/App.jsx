@@ -3,9 +3,9 @@ import './styles/App.css'
 
 function App() {
   return (
-    <>
+    <main>
       <PersonalDetails />
-    </>
+    </main>
   )
 }
 
