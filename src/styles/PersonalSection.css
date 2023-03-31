@@ -1,3 +1,21 @@
 p {
   display: inline;
 }
+button {
+  margin-top: 1.2rem;
+}
+.name-section {
+  margin-bottom: 1.2rem;
+}
+input[name = 'name'] {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  width: 100%;
+  padding: 0;
+}
+input[name = 'profession'] {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
