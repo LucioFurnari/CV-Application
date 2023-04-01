@@ -1,5 +1,6 @@
 import PersonalDetails from './components/PersonalDetails'
 import ExperienceSection from './components/ExperienceSection'
+import EducationSection from './components/EducationSection'
 import './styles/App.css'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <main>
       <PersonalDetails />
       <ExperienceSection />
+      <EducationSection />
     </main>
   )
 }
