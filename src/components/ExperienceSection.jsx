@@ -36,12 +36,15 @@ export default function ExperienceSection() {
       {valid ? <h3>{company}</h3> : <input name="company" value={company} placeholder="Company" onChange={handleInput}></input>}
       {valid ? <p>{position}</p> : <input name="position" value={position} placeholder="Position" onChange={handleInput}></input>}
       <ul>
-        <input name="description" placeholder="Description" onChange={handleInput} value={description}></input>
-        <button onClick={handleList}>Add</button>
+        {
+        !valid 
+        &&
+        <><input name="description" placeholder="Description" onChange={handleInput} value={description}></input><button onClick={handleList}>Add</button></>
+        }
         {list.map((item, i) => <li key={i}>{item}</li>)}
       </ul>
     </section>
-    <button onClick={handleValid}>{valid ? 'Save' : 'Edit'}</button>
+    <button onClick={handleValid}>{valid ? 'Edit' : 'Save'}</button>
     </>
   )
 }
