@@ -31,9 +31,9 @@ export default function PersonalDetails() {
     </section>
     <section className="contact-section">
       {valid ? <p> {input.number} | </p> : <input name="number" onChange={handleInput} value={input.number} placeholder="Number"></input>}
-      {valid ? <span><a href={input.email}>{input.email} </a> |</span>  : <input name="email" onChange={handleInput} value={input.email} placeholder="Email"></input>}
-      {valid ? <span><a href={input.github}> Github </a> | </span>: <input name="github" onChange={handleInput} value={input.github} placeholder="Github"></input>}
-      {valid ? <a href={'https://github.com/'+input.linkedin}> Linkedin </a> : <input name="linkedin" onChange={handleInput} value={input.linkedin} placeholder="Linkedin profile"></input>}
+      {valid ? <span><a href={input.email} target="_blank">{input.email} </a> |</span>  : <input name="email" onChange={handleInput} value={input.email} placeholder="Email"></input>}
+      {valid ? <span><a href={'https://github.com/'+ input.github} target="_blank"> Github </a> | </span>: <input name="github" onChange={handleInput} value={input.github} placeholder="Github"></input>}
+      {valid ? <span><a href={input.linkedin} target="_blank"> Linkedin </a> </span> : <input name="linkedin" onChange={handleInput} value={input.linkedin} placeholder="Linkedin profile"></input>}
     </section>
     <button onClick={handleValid}>{valid ? 'Edit' : 'Save'}</button>
     </>
