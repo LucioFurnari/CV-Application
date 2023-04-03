@@ -17,6 +17,12 @@ export default function ExperienceSection() {
     setSections([...sections, input])
   }
 
+  function deleteSection(ev) {
+    const {id} = ev.target;
+    const newArr = sections.filter((item, i) => id != i)
+    setSections(newArr)
+  }
+
   function handleInput(ev) {
     const {name, id, value} = ev.target
     const newArr = sections.map((item, i) => {
@@ -75,6 +81,7 @@ export default function ExperienceSection() {
         {list.map((item, i) => <li key={i}>{item}</li>)}
       </ul>
     <button onClick={() => handleValid(i)}>{edit ? 'Edit' : 'Save'}</button>
+    <button id={i} onClick={deleteSection}>Delete</button>
     </section>
         )
       })
