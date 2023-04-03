@@ -39,13 +39,18 @@ export default function ExperienceSection() {
     })
     setSections(newArr)
   }
-  function handleList() {
-    setInput({
-      ...input,
-      list: [...list, input.description],
-      description: '',
+  function handleList(ev) {
+    const {id} = ev.target;
+    const newArr = sections.map((item,i) => {
+      if (id == i) {
+        return {...item, list: [...item.list, item.description]}
+      } else {
+        return item
+      }
     })
+    setSections(newArr)
   }
+
   return(
     <>
     <h2>Experience</h2>
@@ -64,7 +69,7 @@ export default function ExperienceSection() {
         {
         !edit 
         &&
-        <><input name="description" placeholder="Description" onChange={handleInput} value={description} id={i}></input><button onClick={handleList}>Add</button></>
+        <><input name="description" placeholder="Description" onChange={handleInput} value={description} id={i}></input><button onClick={handleList} id={i}>Add</button></>
         }
         {list.map((item, i) => <li key={i}>{item}</li>)}
       </ul>
