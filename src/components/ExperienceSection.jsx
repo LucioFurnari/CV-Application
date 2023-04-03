@@ -1,6 +1,6 @@
 import { useState } from "react";
 export default function ExperienceSection() {
-  const [input, setInput] = useState({
+  const input = {
     company: '',
     position: '',
     startDate: '',
@@ -8,9 +8,8 @@ export default function ExperienceSection() {
     description: '',
     list: [],
     edit: false,
-  })
+  }
   const [sections, setSections] = useState([]);
-  // const [valid, setValid] = useState(false);
 
   const {company, position, list, description} = input
 
@@ -29,6 +28,7 @@ export default function ExperienceSection() {
     })
     setSections(newArr)
   }
+
   function handleValid(index) {
     const newArr = sections.map((item, i) => {
       if(i === index) {
@@ -39,6 +39,7 @@ export default function ExperienceSection() {
     })
     setSections(newArr)
   }
+
   function handleList(ev) {
     const {id} = ev.target;
     const newArr = sections.map((item,i) => {
