@@ -7,6 +7,7 @@ export default function ExperienceSection() {
     startDate: '',
     endDate: '',
     description: '',
+    location: '',
     list: [],
     edit: false,
   }
@@ -64,23 +65,69 @@ export default function ExperienceSection() {
     <h2>Experience</h2>
     {
     sections.map((item,i) => {
-      const {edit, company, position, list, description} = item
+      const {edit, company, position, list, description, startDate, endDate, location} = item
       return(
       <section key={i} className="experience-section">
         {edit ? 
-        <h3>{company}</h3> :
-        <input name="company" value={company} placeholder="Company" onChange={handleInput} id={i}></input>}
-        {edit ? 
-        <p>{position}</p> :
-        <input name="position" value={position} placeholder="Position" onChange={handleInput} id={i}></input>}
-      <ul>
-        {
-        !edit 
-        &&
-        <><input name="description" placeholder="Description" onChange={handleInput} value={description} id={i}></input><button onClick={handleList} id={i}>Add</button></>
+        <div className="data-container">
+          <div>
+          <h3>{company}</h3>
+          <p>{position}</p>
+          </div>
+          <div>
+            <p>{location}</p>
+            <p>{startDate}</p>
+          </div>
+        </div>
+        :
+        <div className="inputs-container">
+        <fieldset>
+          <input
+          name="company" 
+          value={company} 
+          placeholder="Company" 
+          onChange={handleInput} 
+          id={i}></input>
+          <input
+          name="position"
+          value={position}
+          placeholder="Position"
+          onChange={handleInput}
+          id={i}></input>
+        </fieldset>
+        <fieldset>
+          <input
+          name="location"
+          value={location}
+          placeholder="Location"
+          onChange={handleInput}
+          id={i}
+          ></input>
+          <input
+          name="startDate"
+          value={startDate}
+          placeholder="Start Date"
+          onChange={handleInput}
+          id={i}
+          ></input>
+        </fieldset>
+        </div>
         }
-        {list.map((item, i) => <li key={i}>{item}</li>)}
-      </ul>
+        <fieldset>
+        {!edit &&
+        <textarea 
+          name="description"
+          placeholder="Description"
+          onChange={handleInput}
+          value={description}
+          id={i}>
+        </textarea>
+        }
+        <ul>
+          {list.map((item, i) => <li key={i}>{item}</li>)}
+        </ul>
+        <button onClick={handleList} id={i}>Add</button>
+        </fieldset>
     <button onClick={() => handleValid(i)}>{edit ? 'Edit' : 'Save'}</button>
     <button id={i} onClick={deleteSection}>Delete</button>
     </section>
