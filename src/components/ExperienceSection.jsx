@@ -136,7 +136,14 @@ export default function ExperienceSection() {
         </textarea>
         }
         <ul>
-          {list.map((item, index) => <li key={index}>{item} {!edit && <button onClick={(ev) => deleteList(i,ev)} id={index}>Delete</button>}</li>)}
+          {
+          list.map((item, index) => {
+          return(
+          <li key={index}>{item} 
+          {!edit && <button onClick={(ev) => deleteList(i,ev)} id={index}>Delete</button>}
+          </li>)
+          })
+          }
         </ul>
         <button onClick={handleList} id={i}>Add</button>
         </fieldset>
