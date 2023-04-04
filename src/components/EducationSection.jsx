@@ -52,10 +52,29 @@ export default function EducationSection() {
         const {school, title, startDate, endDate, edit} = item;
         return(
           <section key={i} className="education-section">
-            {edit ? <p>{school}</p> : <input name="school" placeholder="School" value={school} id={i} onChange={handleInput}></input>}
-            {edit ? <p>{title}</p> : <input name="title" placeholder="Title" value={title} id={i} onChange={handleInput}></input>}
-            {edit ? <p>{startDate}</p> : <input name="startDate" placeholder="Start Date" value={startDate} id={i} onChange={handleInput}></input>}
-            {edit ? <p>{endDate}</p> : <input name="endDate" placeholder="End Date" value={endDate} id={i} onChange={handleInput}></input>}
+            {edit ? 
+            <div className="data-container">
+            <div>
+              <p>{school}</p>
+              <p>{title}</p>
+            </div>
+            <div>
+              <p>{startDate}</p>
+              <p>{endDate}</p>
+            </div>
+            </div>
+            :
+            <div className="inputs-container">
+            <fieldset>
+              <input name="school" placeholder="School" value={school} id={i} onChange={handleInput}></input>
+              <input name="title" placeholder="Title" value={title} id={i} onChange={handleInput}></input>
+            </fieldset>
+            <fieldset>
+              <input name="startDate" placeholder="Start Date" value={startDate} id={i} onChange={handleInput}></input>
+              <input name="endDate" placeholder="End Date" value={endDate} id={i} onChange={handleInput}></input>
+            </fieldset>
+            </div>
+            }
             <button onClick={()=> {handleValid(i)}}>{edit ? 'Edit' : 'Save'}</button>
             <button id={i} onClick={deleteSection}>Delete</button>
           </section>
