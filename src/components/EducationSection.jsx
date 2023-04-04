@@ -1,4 +1,6 @@
 import { useState } from "react";
+import '../styles/EducationSection.css'
+
 export default function EducationSection() {
   const input = {
     school: '',
@@ -49,11 +51,11 @@ export default function EducationSection() {
       sections.map((item,i) => {
         const {school, title, startDate, endDate, edit} = item;
         return(
-          <section key={i}>
-            {edit ? <p>{school}</p> : <input name="school" value={school} id={i} onChange={handleInput}></input>}
-            {edit ? <p>{title}</p> : <input name="title" value={title} id={i} onChange={handleInput}></input>}
-            {edit ? <p>{startDate}</p> : <input name="startDate" value={startDate} id={i} onChange={handleInput}></input>}
-            {edit ? <p>{endDate}</p> : <input name="endDate" value={endDate} id={i} onChange={handleInput}></input>}
+          <section key={i} className="education-section">
+            {edit ? <p>{school}</p> : <input name="school" placeholder="School" value={school} id={i} onChange={handleInput}></input>}
+            {edit ? <p>{title}</p> : <input name="title" placeholder="Title" value={title} id={i} onChange={handleInput}></input>}
+            {edit ? <p>{startDate}</p> : <input name="startDate" placeholder="Start Date" value={startDate} id={i} onChange={handleInput}></input>}
+            {edit ? <p>{endDate}</p> : <input name="endDate" placeholder="End Date" value={endDate} id={i} onChange={handleInput}></input>}
             <button onClick={()=> {handleValid(i)}}>{edit ? 'Edit' : 'Save'}</button>
             <button id={i} onClick={deleteSection}>Delete</button>
           </section>

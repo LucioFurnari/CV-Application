@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../styles/ExperienceSection.css'
 export default function ExperienceSection() {
   const input = {
     company: '',
@@ -65,7 +66,7 @@ export default function ExperienceSection() {
     sections.map((item,i) => {
       const {edit, company, position, list, description} = item
       return(
-      <section key={i}>
+      <section key={i} className="experience-section">
         {edit ? 
         <h3>{company}</h3> :
         <input name="company" value={company} placeholder="Company" onChange={handleInput} id={i}></input>}
