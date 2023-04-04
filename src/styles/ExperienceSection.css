@@ -1,8 +1,23 @@
 .experience-section {
   text-align: center;
 }
+.experience-section p,
+.experience-section h3 {
+  margin: 0;
+}
+.experience-section fieldset {
+  border: none;
+}
+.experience-section textarea {
+  height: 5rem;
+  width: 33rem;
+}
+ul {
+  padding-left: 1rem;
+}
 li {
   text-align: left;
+  max-width: 33rem;
 }
 .experience-section h3 {
   text-align: left;
@@ -10,4 +25,17 @@ li {
 .experience-section p {
   text-align: left;
   display: block;
+}
+.experience-section input {
+  display: block;
+}
+.experience-section .inputs-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.experience-section .data-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

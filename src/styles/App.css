@@ -24,6 +24,10 @@ h2 {
   border-bottom: 1px solid;
   width: 600px;
 }
+input:focus {
+  outline: none;
+  text-decoration: underline;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

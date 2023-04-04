@@ -1,5 +1,12 @@
+.education-section .data-container,
+.education-section .inputs-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .education-section p {
   display: block;
+  margin: 0;
 }
 .education-section input {
   display: block;
