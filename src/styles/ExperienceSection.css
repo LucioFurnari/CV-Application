@@ -1,0 +1,13 @@
+.experience-section {
+  text-align: center;
+}
+li {
+  text-align: left;
+}
+.experience-section h3 {
+  text-align: left;
+}
+.experience-section p {
+  text-align: left;
+  display: block;
+}
