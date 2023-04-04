@@ -25,6 +25,18 @@ export default function ExperienceSection() {
     setSections(newArr)
   }
 
+  function deleteList(index, ev) {
+    const {id} = ev.target;
+    const newArr = sections.map((item,i) => {
+      if(index == i) {
+        return {...item, list: item.list.filter((item,i) => id != i)}
+      } else {
+        return item
+      }
+    })
+    setSections(newArr)
+  }
+
   function handleInput(ev) {
     const {name, id, value} = ev.target
     const newArr = sections.map((item, i) => {
@@ -124,7 +136,7 @@ export default function ExperienceSection() {
         </textarea>
         }
         <ul>
-          {list.map((item, i) => <li key={i}>{item}</li>)}
+          {list.map((item, index) => <li key={index}>{item} {!edit && <button onClick={(ev) => deleteList(i,ev)} id={index}>Delete</button>}</li>)}
         </ul>
         <button onClick={handleList} id={i}>Add</button>
         </fieldset>
