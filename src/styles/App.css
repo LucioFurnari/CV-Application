@@ -8,6 +8,7 @@ main {
   background-color: rgb(240,240,240);
   padding: 1rem;
 }
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -23,10 +24,19 @@ main {
 h2 {
   border-bottom: 1px solid;
   width: 600px;
+  margin: 0;
 }
 input:focus {
   outline: none;
   text-decoration: underline;
+}
+textarea {
+  height: 5rem;
+  width: 33rem;
+  max-width: 33rem;
+  background-color: transparent;
+  color: rgb(45, 45, 45);
+  resize: none;
 }
 @keyframes logo-spin {
   from {
