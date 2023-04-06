@@ -20,6 +20,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
+.list-add-btn {
+  margin-right: 0.5rem;
+}
 input[name = 'name'] {
   display: block;
   margin-bottom: 1.5rem;
