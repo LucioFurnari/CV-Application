@@ -1,20 +1,24 @@
 .contact-section p {
   text-align: left;
 }
-h1 {
-  margin: 0;
-  margin-bottom: 1rem;
-  color: rgb(49, 92, 162);
-}
-button {
-  margin-top: 1.2rem;
-}
 .name-section {
   margin-bottom: 1.2rem;
 }
 .contact-section {
   text-align: center;
   margin-bottom: 1rem;
+}
+.contact-section span {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2rem;
+}
+.contact-section span svg {
+  height: 100%;
+}
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
 }
 input[name = 'name'] {
   display: block;
