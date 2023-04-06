@@ -14,6 +14,10 @@ export default function Skillsection() {
     setList([...list, input])
   }
 
+  function removeSkill(ev) {
+    const {id} = ev.target;
+    setList(list.filter((item,index) => id != index))
+  }
   function handleValid() {
     setEdit(!edit)
   }
@@ -25,7 +29,7 @@ export default function Skillsection() {
         <ul className="skill-list">
         {list.map((item, index) => {
         return (
-          <li key={index}>{item}</li>
+          <li key={index}>{item} {!edit && <button id={index} onClick={removeSkill}>x</button>}</li>
         )
         })}
         </ul>
