@@ -145,7 +145,7 @@ export default function ExperienceSection() {
           })
           }
         </ul>
-        <button onClick={handleList} id={i}>Add</button>
+        <button onClick={handleList} id={i}>Add description</button>
         </fieldset>
     <button onClick={() => handleValid(i)}>{edit ? 'Edit' : 'Save'}</button>
     <button id={i} onClick={deleteSection}>Delete</button>
